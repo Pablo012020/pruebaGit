@@ -1,0 +1,10 @@
+public void crearArchivoRegistroUsuarios(String strNumeroRegistros, String strNombreArchivo) {
+		try {
+			Excel excel = new Excel();
+			Properties propiedades = new Properties();
+			propiedades.load(new FileReader("rutasDocumentos.properties"));
+			excel.crearLeerArchivo(propiedades.getProperty("pathArhivoNuevosUsuarios"), strNombreArchivo+".xlsx");
+		}catch (Exception e) {
+			fail("No se puedo crearleer archivo excel debido a : "+e.getMessage());
+		}
+	}
